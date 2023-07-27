@@ -15,7 +15,7 @@ Freebird is a Chrome extension designed to bring back the classic Twitter logo a
 3. **Continuous Checks:** The extension checks for the logo at regular intervals to ensure that the classic logo is displayed even when the page is refreshed or a new page is loaded.
 
 ## ⚙️ Installation
-1. **Download From the Chrome Store** Download the chrome extension from the published chrome store listing here--> https://chrome.google.com/webstore/detail/freebird-x-twitter-logo-r/obopljmdbiaalaffaaijniobhfhfnild
+1. **Download From the Chrome Store:** Download the chrome extension from the published chrome store listing [here](https://chrome.google.com/webstore/detail/freebird-x-twitter-logo-r/obopljmdbiaalaffaaijniobhfhfnild).
 
 OR
 
