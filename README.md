@@ -1,6 +1,6 @@
 # 🐦 Freebird  - X (Twitter) Logo Restorer 🔄
 
-Freebird is a Chrome extension designed to bring back the classic Twitter logo and favicon. Download [here](https://chrome.google.com/webstore/detail/freebird-x-twitter-logo-r/obopljmdbiaalaffaaijniobhfhfnild). This extension restores the classic Twitter logo, bringing back the nostalgia and familiarity of the original design. Free the bird.
+Freebird is a Chrome extension designed to bring back the classic Twitter logo and favicon. Download it from the chrome store [here](https://chrome.google.com/webstore/detail/freebird-x-twitter-logo-r/obopljmdbiaalaffaaijniobhfhfnild). This extension restores the classic Twitter logo, bringing back the nostalgia and familiarity of the original design. Free the bird.
 
 ## 🌟 Features
 
