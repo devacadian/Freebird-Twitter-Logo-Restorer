@@ -1,19 +1,11 @@
 window.addEventListener('load', function() {
   replaceLogoAndFavicon();  // Try replacing the logo immediately
-  replaceButtonText();
-  observeForButtonTextChanges();     // Try replacing the button text immediately
   setTimeout(replaceLogoAndFavicon, 500);  
-  setTimeout(replaceButtonText, 500);     // Try again after 0.5 seconds
   setTimeout(replaceLogoAndFavicon, 1000);
-  setTimeout(replaceButtonText, 1000);    // Try again after 1 second
   setTimeout(replaceLogoAndFavicon, 2000);
-  setTimeout(replaceButtonText, 2000);    // Try again after 2 seconds
   setTimeout(replaceLogoAndFavicon, 3000);
-  setTimeout(replaceButtonText, 3000);    // Try again after 3 seconds
   setTimeout(replaceLogoAndFavicon, 4000);
-  setTimeout(replaceButtonText, 4000);    // Try again after 4 seconds
   setTimeout(replaceLogoAndFavicon, 5000);
-  setTimeout(replaceButtonText, 5000);    // Try again after 5 seconds
 });
 
 function replaceLogoAndFavicon() {
@@ -25,7 +17,6 @@ function replaceLogoAndFavicon() {
     // Set the logo color
     logo.setAttribute('fill', '#1DA1F2');
   }
-  
 
   // Replace the favicon
   let favicon = document.querySelector('link[rel="shortcut icon"]');
@@ -38,37 +29,4 @@ function replaceLogoAndFavicon() {
   if (titleElement && titleElement.textContent.includes('X')) {
     titleElement.textContent = titleElement.textContent.replace('X', 'Twitter');
   }
-}
-
-  function replaceButtonText() {
-    // Find all span elements containing the text 'Post'
-    let buttonSpans = document.querySelectorAll('span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
-    buttonSpans.forEach(span => {
-        if (span.textContent.trim() === 'Post') {
-            span.textContent = 'Tweet';
-        }
-    });
-}
-
-function observeForButtonTextChanges() {
-  // Select the node that will be observed for mutations
-  let targetNode = document.body;
-
-  // Options for the observer (which mutations to observe)
-  let config = { attributes: false, childList: true, subtree: true };
-
-  // Callback function to execute when mutations are observed
-  let callback = function(mutationsList, observer) {
-    for(let mutation of mutationsList) {
-      if (mutation.type === 'childList') {
-        replaceButtonText();
-      }
-    }
-  };
-
-  // Create an observer instance linked to the callback function
-  let observer = new MutationObserver(callback);
-
-  // Start observing the target node for configured mutations
-  observer.observe(targetNode, config);
 }
