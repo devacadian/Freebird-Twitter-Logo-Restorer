@@ -1,5 +1,6 @@
 window.addEventListener('load', function() {
   replaceLogoAndFavicon();  // Try replacing the logo immediately
+  setTimeout(replaceLogoAndFavicon, 100); 
   setTimeout(replaceLogoAndFavicon, 500);  
   setTimeout(replaceLogoAndFavicon, 1000);
   setTimeout(replaceLogoAndFavicon, 2000);
