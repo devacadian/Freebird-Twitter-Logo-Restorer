@@ -1,5 +1,6 @@
 window.addEventListener('load', function() {
   replaceLogoAndFavicon();  // Try replacing the logo immediately
+  observeTitleChanges();    // Observe for changes to the title
   setTimeout(replaceLogoAndFavicon, 100); 
   setTimeout(replaceLogoAndFavicon, 500);  
   setTimeout(replaceLogoAndFavicon, 1000);
@@ -30,4 +31,34 @@ function replaceLogoAndFavicon() {
   if (titleElement && titleElement.textContent.includes('X')) {
     titleElement.textContent = titleElement.textContent.replace('X', 'Twitter');
   }
+}
+
+function updateTitle() {
+  let titleElement = document.querySelector('title');
+  if (titleElement && titleElement.textContent.includes('X')) {
+    titleElement.textContent = titleElement.textContent.replace('X', 'Twitter');
+  }
+}
+
+function observeTitleChanges() {
+  // Select the node that will be observed for mutations (the head element where the title resides)
+  let targetNode = document.head;
+
+  // Options for the observer (which mutations to observe)
+  let config = { childList: true, subtree: true };
+
+  // Callback function to execute when mutations are observed
+  let callback = function(mutationsList, observer) {
+    for(let mutation of mutationsList) {
+      if (mutation.target.nodeName === 'TITLE') {
+        updateTitle();
+      }
+    }
+  };
+
+  // Create an observer instance linked to the callback function
+  let observer = new MutationObserver(callback);
+
+  // Start observing the target node for configured mutations
+  observer.observe(targetNode, config);
 }
