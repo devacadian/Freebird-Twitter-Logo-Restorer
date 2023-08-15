@@ -1,6 +1,7 @@
 window.addEventListener('load', function() {
   replaceLogoAndFavicon();  // Try replacing the logo immediately
-  observeTitleChanges();    // Observe for changes to the title
+  observeTitleChanges();  
+  continuousObservePostChanges(); // Observe for changes to the title
   setTimeout(replaceLogoAndFavicon, 100); 
   setTimeout(replaceLogoAndFavicon, 500);  
   setTimeout(replaceLogoAndFavicon, 1000);
@@ -8,6 +9,8 @@ window.addEventListener('load', function() {
   setTimeout(replaceLogoAndFavicon, 3000);
   setTimeout(replaceLogoAndFavicon, 4000);
   setTimeout(replaceLogoAndFavicon, 5000);
+  setTimeout(modifyPostToTweet, 6000); 
+  setTimeout(modifyPostToTweet, 9000); 
 });
 
 function replaceLogoAndFavicon() {
@@ -61,4 +64,27 @@ function observeTitleChanges() {
 
   // Start observing the target node for configured mutations
   observer.observe(targetNode, config);
+}
+
+function modifyPostToTweet() {
+  // Targeting the specific classes that contain the word "Post"
+  const elements = document.querySelectorAll('a[data-testid="SideNav_NewTweet_Button"] span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0, div.css-901oao.r-1awozwy.r-jwli3a.r-6koalj.r-18u37iz.r-16y2uox.r-37j5jr.r-a023e6.r-b88u0q.r-1777fci.r-rjixqe.r-bcqeeo.r-q4m81j.r-qvutc0 span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
+
+  // Function to replace 'Post' with 'Tweet'
+  const replaceContent = element => {
+    if (element.textContent.includes('Post')) {
+      element.textContent = element.textContent.replace('Post', 'Tweet');
+    }
+  };
+
+  // Apply the replacement to the set of elements
+  elements.forEach(replaceContent);
+}
+
+function continuousObservePostChanges() {
+  // Call modify function at first
+  modifyPostToTweet();
+
+  // Continuous checking every 500ms
+  setInterval(modifyPostToTweet, 500);
 }

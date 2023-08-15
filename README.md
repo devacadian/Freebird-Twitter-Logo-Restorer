@@ -6,13 +6,21 @@ Freebird is a Chrome extension designed to bring back the classic Twitter logo a
 
 - **Logo Restoration:** The extension replaces the new X (twitter) logo with the classic one, restoring the familiar look of your Twitter interface.
 - **Favicon Restoration:** Not just the logo, but the favicon (the small icon you see on the browser tab) is also replaced with the classic one.
+
+- **Tweet Button Restoration:** Changes the "Post" button text to "Tweet," bringing back the traditional Twitter terminology.
+
+- **Header Title Restoration:** The extension changes the Chrome Tab's title from "X" to "Twitter," maintaining the consistent appearance of the platform.
+
 - **Seamless Integration:** The extension works smoothly and does not disrupt your Twitter browsing experience.
 
 ## 📝 How It Works
 
 1. **Locates the Logo:** The extension identifies the X (twitter) logo by targeting the SVG path of the logo.
+
 2. **Replaces the Logo:** Once the logo is identified, it is replaced with the classic Twitter logo. The same process is repeated for the favicon.
-3. **Continuous Checks:** The extension checks for the logo at regular intervals to ensure that the classic logo is displayed even when the page is refreshed or a new page is loaded.
+3. **Tweet Button Restoration:** Changes the "Post" button text to "Tweet," bringing back the traditional Twitter terminology.
+
+4. **Changes Header Title:** The extension changes the Chrome Tab's title from "X" to "Twitter," maintaining the consistent appearance of the platform.
 
 ## ⚙️ Installation
 1. **Download From the Chrome Store:** Download the chrome extension from the published chrome store listing [here](https://chrome.google.com/webstore/detail/freebird-x-twitter-logo-r/obopljmdbiaalaffaaijniobhfhfnild).
