@@ -1,16 +1,25 @@
 window.addEventListener('load', function() {
-  replaceLogoAndFavicon();  // Try replacing the logo immediately
+    let style = document.createElement('style');
+    style.innerHTML = `
+    @media (min-width: 1300px) {
+      .custom-tweet-button {
+        visibility: hidden;
+        position: relative;
+      }
+  
+      .custom-tweet-button::after {
+        content: "Tweet";
+        visibility: visible;
+        position: relative;
+        top: -10px;
+      }
+    `;
+    document.head.appendChild(style);
+  replaceLogoAndFavicon(); 
   observeTitleChanges();  
-  continuousObservePostChanges(); // Observe for changes to the title
-  setTimeout(replaceLogoAndFavicon, 100); 
-  setTimeout(replaceLogoAndFavicon, 500);  
-  setTimeout(replaceLogoAndFavicon, 1000);
-  setTimeout(replaceLogoAndFavicon, 2000);
-  setTimeout(replaceLogoAndFavicon, 3000);
-  setTimeout(replaceLogoAndFavicon, 4000);
-  setTimeout(replaceLogoAndFavicon, 5000);
-  setTimeout(modifyPostToTweet, 6000); 
-  setTimeout(modifyPostToTweet, 9000); 
+  continuousObserveModifyPostToTweet(); 
+  continuousObserveRepostChanges(); 
+  continuousObserveReplaceLogoAndFavicon();
 });
 
 function replaceLogoAndFavicon() {
@@ -67,13 +76,37 @@ function observeTitleChanges() {
 }
 
 function modifyPostToTweet() {
-  // Targeting the specific classes that contain the word "Post"
-  const elements = document.querySelectorAll('a[data-testid="SideNav_NewTweet_Button"] span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0, div.css-901oao.r-1awozwy.r-jwli3a.r-6koalj.r-18u37iz.r-16y2uox.r-37j5jr.r-a023e6.r-b88u0q.r-1777fci.r-rjixqe.r-bcqeeo.r-q4m81j.r-qvutc0 span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
+  // Targeting the specific inline tweet button
+  const elementInline = document.querySelector('div[data-testid="tweetButtonInline"] span.css-901oao.css-16my406.r-poiln3.r-a023e6.r-rjixqe.r-bcqeeo.r-qvutc0');
+  // Targeting the specific modal tweet button
+  const elementModal = document.querySelector('div[data-testid="tweetButton"] span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
 
-  // Function to replace 'Post' with 'Tweet'
+  // Function to replace 'Post' with 'Tweet' for inline tweet button
+  if (elementInline && elementInline.textContent.includes('Post')) {
+    elementInline.textContent = elementInline.textContent.replace('Post', 'Tweet');
+  }
+
+  // Function to replace 'Post' with 'Tweet' for modal tweet button
+  if (elementModal && elementModal.textContent.includes('Post')) {
+    elementModal.textContent = elementModal.textContent.replace('Post', 'Tweet');
+  }
+
+  // Targeting the specific sidebar tweet button
+  const elementSidebar = document.querySelector('a[data-testid="SideNav_NewTweet_Button"] span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
+  if (elementSidebar && elementSidebar.textContent.includes('Post')) {
+    elementSidebar.classList.add('custom-tweet-button');
+  }
+}
+
+
+function modifyRepostToRetweet() {
+  // Targeting the specific class that contains the word "Repost"
+  const elements = document.querySelectorAll('div.css-1dbjc4n.r-16y2uox.r-1wbh5a2 div.css-901oao.r-1nao33i.r-37j5jr.r-a023e6.r-b88u0q.r-rjixqe.r-bcqeeo.r-qvutc0 span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
+
+  // Function to replace 'Repost' with 'Retweet'
   const replaceContent = element => {
-    if (element.textContent.includes('Post')) {
-      element.textContent = element.textContent.replace('Post', 'Tweet');
+    if (element.textContent.includes('Repost')) {
+      element.textContent = element.textContent.replace('Repost', 'Retweet');
     }
   };
 
@@ -81,10 +114,22 @@ function modifyPostToTweet() {
   elements.forEach(replaceContent);
 }
 
-function continuousObservePostChanges() {
+// To keep checking for changes continuously
+function continuousObserveRepostChanges() {
   // Call modify function at first
-  modifyPostToTweet();
+  modifyRepostToRetweet();
 
   // Continuous checking every 500ms
-  setInterval(modifyPostToTweet, 500);
+  setInterval(modifyRepostToRetweet, 100);
+}
+
+// You can call the continuousObserveRepostChanges function after defining it to ensure that the Repost text is continuously being replaced.
+continuousObserveRepostChanges();
+
+function continuousObserveModifyPostToTweet() {
+  setInterval(modifyPostToTweet, 100);
+}
+
+function continuousObserveReplaceLogoAndFavicon() {
+  setInterval(replaceLogoAndFavicon, 100);
 }
