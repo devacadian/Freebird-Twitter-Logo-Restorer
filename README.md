@@ -35,3 +35,11 @@ OR
 
 Contributions, issues, and feature requests are welcome! Please open an issue to discuss your ideas or submit a pull request.
 
+## V1.12 Notes:
+
+- "Tweet" button restored instead of "Post"
+- "Retweet" button restored instead of "Repost"
+
+## V1.11 Notes:
+
+- Chrome Tabs titles now display "Twitter" instead of "X"
