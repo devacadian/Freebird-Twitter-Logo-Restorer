@@ -22,6 +22,8 @@ window.addEventListener('load', function() {
   continuousObserveReplaceLogoAndFavicon();
 });
 
+
+
 function replaceLogoAndFavicon() {
   // Twitter uses SVG for their logos, so we target the SVG path
   let logo = document.querySelector('svg path[d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"]');
@@ -38,7 +40,6 @@ function replaceLogoAndFavicon() {
     favicon.href = 'https://abs.twimg.com/favicons/twitter.ico';  // Replace with your new favicon ICO
   }
 
-
   
   // Replace the home icon
   let svgPaths = document.querySelectorAll('svg path');
@@ -50,6 +51,7 @@ function replaceLogoAndFavicon() {
     }
   });
 
+
   // Update the tab title
   let titleElement = document.querySelector('title');
   if (titleElement && titleElement.textContent.includes('X')) {
@@ -57,12 +59,17 @@ function replaceLogoAndFavicon() {
   }
 }
 
+
+
+
 function updateTitle() {
   let titleElement = document.querySelector('title');
   if (titleElement && titleElement.textContent.includes('X')) {
     titleElement.textContent = titleElement.textContent.replace('X', 'Twitter');
   }
 }
+
+
 
 function observeTitleChanges() {
   // Select the node that will be observed for mutations (the head element where the title resides)
@@ -86,6 +93,8 @@ function observeTitleChanges() {
   // Start observing the target node for configured mutations
   observer.observe(targetNode, config);
 }
+
+
 
 function modifyPostToTweet() {
   // Targeting the specific inline tweet button
@@ -111,9 +120,52 @@ function modifyPostToTweet() {
 }
 
 
+function modifyPostsToTweets() {
+  const elements = document.querySelectorAll('span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
+
+  elements.forEach(element => {
+    if (element.textContent.includes('Posts')) {
+      element.textContent = element.textContent.replace('Posts', 'Tweets');
+    }
+  });
+}
+
+function modifyPostEngagementsToTweetEngagements() {
+  const elements = document.querySelectorAll('span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
+
+  elements.forEach(element => {
+    switch(element.textContent) {
+      case 'View post engagements':
+        element.textContent = 'View tweet engagements';
+        break;
+      case 'Embed post':
+        element.textContent = 'Embed tweet';
+        break;
+      case 'View post analytics':
+        element.textContent = 'View tweet analytics';
+        break;
+      case 'Post Analytics':
+        element.textContent = 'Tweet Analytics';
+        break;
+      case 'Post engagements':
+        element.textContent = 'Tweet engagements';
+        break;
+      case 'No Reposts yet':
+        element.textContent = 'No Retweets yet';
+        break;
+      case 'Reposts':
+        element.textContent = 'Retweets';
+        break;
+      case "Share someone else’s post on your timeline by reposting it. When you do, it’ll show up here.":
+        element.textContent = "Share someone else’s tweet on your timeline by retweeting it. When you do, it’ll show up here.";
+        break;
+    }
+  });
+}
+
 function modifyRepostToRetweet() {
-  // Targeting the specific class that contains the word "Repost"
-  const elements = document.querySelectorAll('div.css-1dbjc4n.r-16y2uox.r-1wbh5a2 div.css-901oao.r-1nao33i.r-37j5jr.r-a023e6.r-b88u0q.r-rjixqe.r-bcqeeo.r-qvutc0 span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
+  // Targeting elements that may contain the word "Repost"
+  const elements = document.querySelectorAll('span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
 
   // Function to replace 'Repost' with 'Retweet'
   const replaceContent = element => {
@@ -130,8 +182,12 @@ function modifyRepostToRetweet() {
 function continuousObserveRepostChanges() {
   // Call modify function at first
   modifyRepostToRetweet();
+  modifyPostsToTweets();  // Call modify function at first
+  modifyPostEngagementsToTweetEngagements();  // Call modify function at first
 
   // Continuous checking every 500ms
+  setInterval(modifyPostEngagementsToTweetEngagements, 100); 
+  setInterval(modifyPostsToTweets, 100);
   setInterval(modifyRepostToRetweet, 100);
 }
 
