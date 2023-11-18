@@ -17,11 +17,10 @@ window.addEventListener('load', function() {
     document.head.appendChild(style);
   replaceLogoAndFavicon(); 
   observeTitleChanges();  
+  continuousObserveModifications(); 
   continuousObserveModifyPostToTweet(); 
-  continuousObserveRepostChanges(); 
   continuousObserveReplaceLogoAndFavicon();
 });
-
 
 
 function replaceLogoAndFavicon() {
@@ -120,21 +119,12 @@ function modifyPostToTweet() {
 }
 
 
-function modifyPostsToTweets() {
+function modifyTextContent() {
+  // Combine other text modification functions
   const elements = document.querySelectorAll('span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
 
   elements.forEach(element => {
-    if (element.textContent.includes('Posts')) {
-      element.textContent = element.textContent.replace('Posts', 'Tweets');
-    }
-  });
-}
-
-function modifyPostEngagementsToTweetEngagements() {
-  const elements = document.querySelectorAll('span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
-
-  elements.forEach(element => {
-    switch(element.textContent) {
+    switch (element.textContent) {
       case 'View post engagements':
         element.textContent = 'View tweet engagements';
         break;
@@ -153,46 +143,32 @@ function modifyPostEngagementsToTweetEngagements() {
       case 'No Reposts yet':
         element.textContent = 'No Retweets yet';
         break;
+        case 'Report post':
+          element.textContent = 'Report tweet';
+          break;
       case 'Reposts':
         element.textContent = 'Retweets';
         break;
       case "Share someone else’s post on your timeline by reposting it. When you do, it’ll show up here.":
         element.textContent = "Share someone else’s tweet on your timeline by retweeting it. When you do, it’ll show up here.";
         break;
+      default:
+        if (element.textContent.includes('Posts')) {
+          element.textContent = element.textContent.replace('Posts', 'Tweets');
+        } else if (element.textContent.includes('Repost')) {
+          element.textContent = element.textContent.replace('Repost', 'Retweet');
+        }
+        break;
     }
   });
 }
 
-function modifyRepostToRetweet() {
-  // Targeting elements that may contain the word "Repost"
-  const elements = document.querySelectorAll('span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
-
-  // Function to replace 'Repost' with 'Retweet'
-  const replaceContent = element => {
-    if (element.textContent.includes('Repost')) {
-      element.textContent = element.textContent.replace('Repost', 'Retweet');
-    }
-  };
-
-  // Apply the replacement to the set of elements
-  elements.forEach(replaceContent);
+function continuousObserveModifications() {
+  // Combine all modification functions into a single continuous observation
+  setInterval(() => {
+    modifyTextContent();
+  }, 100);
 }
-
-// To keep checking for changes continuously
-function continuousObserveRepostChanges() {
-  // Call modify function at first
-  modifyRepostToRetweet();
-  modifyPostsToTweets();  // Call modify function at first
-  modifyPostEngagementsToTweetEngagements();  // Call modify function at first
-
-  // Continuous checking every 500ms
-  setInterval(modifyPostEngagementsToTweetEngagements, 100); 
-  setInterval(modifyPostsToTweets, 100);
-  setInterval(modifyRepostToRetweet, 100);
-}
-
-// You can call the continuousObserveRepostChanges function after defining it to ensure that the Repost text is continuously being replaced.
-continuousObserveRepostChanges();
 
 function continuousObserveModifyPostToTweet() {
   setInterval(modifyPostToTweet, 100);
@@ -201,3 +177,5 @@ function continuousObserveModifyPostToTweet() {
 function continuousObserveReplaceLogoAndFavicon() {
   setInterval(replaceLogoAndFavicon, 100);
 }
+
+continuousObserveModifications();
