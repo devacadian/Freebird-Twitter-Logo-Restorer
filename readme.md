@@ -40,6 +40,11 @@ OR
 
 Contributions, issues, and feature requests are welcome! Please open an issue to discuss your ideas or submit a pull request.
 
+
+## V1.14 Notes:
+
+- Hotfix to adapt to new twitter (x) code changes
+
 ## V1.13 Notes:
 
 - Home button restored to Birdhouse icon

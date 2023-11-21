@@ -97,9 +97,9 @@ function observeTitleChanges() {
 
 function modifyPostToTweet() {
   // Targeting the specific inline tweet button
-  const elementInline = document.querySelector('div[data-testid="tweetButtonInline"] span.css-901oao.css-16my406.r-poiln3.r-a023e6.r-rjixqe.r-bcqeeo.r-qvutc0');
+  const elementInline = document.querySelector('div[data-testid="tweetButtonInline"] span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
   // Targeting the specific modal tweet button
-  const elementModal = document.querySelector('div[data-testid="tweetButton"] span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
+  const elementModal = document.querySelector('div[data-testid="tweetButton"] span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
 
   // Function to replace 'Post' with 'Tweet' for inline tweet button
   if (elementInline && elementInline.textContent.includes('Post')) {
@@ -112,7 +112,7 @@ function modifyPostToTweet() {
   }
 
   // Targeting the specific sidebar tweet button
-  const elementSidebar = document.querySelector('a[data-testid="SideNav_NewTweet_Button"] span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
+  const elementSidebar = document.querySelector('a[data-testid="SideNav_NewTweet_Button"] span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
   if (elementSidebar && elementSidebar.textContent.includes('Post')) {
     elementSidebar.classList.add('custom-tweet-button');
   }
@@ -121,7 +121,7 @@ function modifyPostToTweet() {
 
 function modifyTextContent() {
   // Combine other text modification functions
-  const elements = document.querySelectorAll('span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0');
+  const elements = document.querySelectorAll('span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
 
   elements.forEach(element => {
     switch (element.textContent) {
