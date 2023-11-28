@@ -131,12 +131,21 @@ function modifyTextContent() {
       case 'Embed post':
         element.textContent = 'Embed tweet';
         break;
+      case 'Live on X':
+        element.textContent = 'Live on Twitter';
+        break;
       case 'View post analytics':
         element.textContent = 'View tweet analytics';
         break;
-      case 'Post Analytics':
+     case 'You shared a post':
+          element.textContent = 'You shared a tweet';
+          break;
+     case 'Post Analytics':
         element.textContent = 'Tweet Analytics';
         break;
+     case 'Share post via …':
+          element.textContent = 'Share tweet via …';
+          break;
       case 'Post engagements':
         element.textContent = 'Tweet engagements';
         break;
