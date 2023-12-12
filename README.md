@@ -40,7 +40,12 @@ OR
 
 Contributions, issues, and feature requests are welcome! Please open an issue to discuss your ideas or submit a pull request.
 
-## V1.15 Notes:
+
+## V1.17 Notes:
+
+- Birdhouse Home Button icon filled on /home only fixed
+
+## V1.16 Notes:
 
 - Unnecessary ActiveTab permission removed
 
