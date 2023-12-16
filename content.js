@@ -142,6 +142,9 @@ function modifyTextContent() {
       case 'Live on X':
         element.textContent = 'Live on Twitter';
         break;
+        case 'Sign in to X':
+          element.textContent = 'Sign in to Twitter';
+          break;
       case 'View post analytics':
         element.textContent = 'View tweet analytics';
         break;
