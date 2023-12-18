@@ -171,6 +171,8 @@ function modifyTextContent() {
           break;
       case 'Reposts':
         element.textContent = 'Retweets';
+        case 'Undo repost':
+          element.textContent = 'Undo retweet';
         break;
       case "Share someone else’s post on your timeline by reposting it. When you do, it’ll show up here.":
         element.textContent = "Share someone else’s tweet on your timeline by retweeting it. When you do, it’ll show up here.";
