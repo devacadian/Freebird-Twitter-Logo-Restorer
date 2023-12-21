@@ -171,6 +171,7 @@ function modifyTextContent() {
           break;
       case 'Reposts':
         element.textContent = 'Retweets';
+        break;
         case 'Undo repost':
           element.textContent = 'Undo retweet';
         break;

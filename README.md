@@ -41,6 +41,10 @@ OR
 Contributions, issues, and feature requests are welcome! Please open an issue to discuss your ideas or submit a pull request.
 
 
+## V1.20 Notes:
+
+- Retweets text in analytics tab fix
+
 ## V1.19 Notes:
 
 - "Undo repost" replaced with "Undo retweet"
