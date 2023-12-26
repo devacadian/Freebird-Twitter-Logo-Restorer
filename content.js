@@ -18,8 +18,6 @@ window.addEventListener('load', function() {
   replaceLogoAndFavicon(); 
   observeTitleChanges();  
   continuousObserveModifications(); 
-  continuousObserveModifyPostToTweet(); 
-  continuousObserveReplaceLogoAndFavicon();
 });
 
 
@@ -126,7 +124,6 @@ function modifyPostToTweet() {
   }
 }
 
-
 function modifyTextContent() {
   // Combine other text modification functions
   const elements = document.querySelectorAll('span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
@@ -142,66 +139,68 @@ function modifyTextContent() {
       case 'Live on X':
         element.textContent = 'Live on Twitter';
         break;
-        case 'Sign in to X':
-          element.textContent = 'Sign in to Twitter';
-          break;
+      case 'Sign in to X':
+        element.textContent = 'Sign in to Twitter';
+        break;
       case 'View post analytics':
         element.textContent = 'View tweet analytics';
         break;
-     case 'You shared a post':
-          element.textContent = 'You shared a tweet';
-          break;
-     case 'Post Analytics':
+      case 'You shared a post':
+        element.textContent = 'You shared a tweet';
+        break;
+      case 'Post Analytics':
         element.textContent = 'Tweet Analytics';
         break;
-     case 'Share post via …':
-          element.textContent = 'Share tweet via …';
-          break;
+      case 'Share post via …':
+        element.textContent = 'Share tweet via …';
+        break;
       case 'Post engagements':
         element.textContent = 'Tweet engagements';
         break;
-        case 'Welcome to X!':
-          element.textContent = 'Welcome to Twitter!';
-          break;
+      case 'Welcome to X!':
+        element.textContent = 'Welcome to Twitter!';
+        break;
       case 'No Reposts yet':
         element.textContent = 'No Retweets yet';
         break;
-        case 'Report post':
-          element.textContent = 'Report tweet';
-          break;
+      case 'Report post':
+        element.textContent = 'Report tweet';
+        break;
       case 'Reposts':
         element.textContent = 'Retweets';
         break;
-        case 'Undo repost':
-          element.textContent = 'Undo retweet';
+      case 'Save post':
+          element.textContent = 'Save tweet';
+          break;
+      case 'These posts are protected':
+        element.textContent = 'These tweets are protected';
+        break;
+      case 'Undo repost':
+        element.textContent = 'Undo retweet';
         break;
       case "Share someone else’s post on your timeline by reposting it. When you do, it’ll show up here.":
         element.textContent = "Share someone else’s tweet on your timeline by retweeting it. When you do, it’ll show up here.";
         break;
-      default:
-        if (element.textContent.includes('Posts')) {
-          element.textContent = element.textContent.replace('Posts', 'Tweets');
-        } else if (element.textContent.includes('Repost')) {
-          element.textContent = element.textContent.replace('Repost', 'Retweet');
-        }
-        break;
-    }
-  });
-}
+        default:
+          if (element.textContent.includes('Posts')) {
+            element.textContent = element.textContent.replace('Posts', 'Tweets');
+          } else if (element.textContent.includes('Repost')) {
+            element.textContent = element.textContent.replace('Repost', 'Retweet');
+          } else if (element.textContent.toLowerCase().includes('posts')) {
+            element.textContent = element.textContent.replace(/posts/g, 'tweets');
+          }
+          
+          break;
+      }
+    });
+  }
 
 function continuousObserveModifications() {
-  // Combine all modification functions into a single continuous observation
   setInterval(() => {
     modifyTextContent();
+    modifyPostToTweet();
+    replaceLogoAndFavicon();
   }, 100);
-}
-
-function continuousObserveModifyPostToTweet() {
-  setInterval(modifyPostToTweet, 100);
-}
-
-function continuousObserveReplaceLogoAndFavicon() {
-  setInterval(replaceLogoAndFavicon, 100);
 }
 
 continuousObserveModifications();
