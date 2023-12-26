@@ -41,7 +41,7 @@ OR
 Contributions, issues, and feature requests are welcome! Please open an issue to discuss your ideas or submit a pull request.
 
 
-## v1.21 Notes:
+## V1.21 Notes:
 
 - "tweets" text restored in trending tab
 - "These tweets are protected" text restored
