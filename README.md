@@ -41,6 +41,13 @@ OR
 Contributions, issues, and feature requests are welcome! Please open an issue to discuss your ideas or submit a pull request.
 
 
+## V1.22 Notes:
+
+- In For You tab bubble "posts" text changed to "tweets"
+- "tweets" text restored on blocked accounts
+- "tweets" text restored on account that have you blocked
+
+
 ## V1.21 Notes:
 
 - "tweets" text restored in trending tab

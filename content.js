@@ -107,6 +107,10 @@ function modifyPostToTweet() {
   // Targeting the specific modal tweet button
   const elementModal = document.querySelector('div[data-testid="tweetButton"] span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
 
+  const elementPillLabel = document.querySelector('div[data-testid="pillLabel"].css-1rynq56.r-dnmrzs.r-1udh08x.r-3s2u2q.r-bcqeeo.r-qvutc0.r-37j5jr.r-a023e6.r-rjixqe.r-16dba41.r-1kihuf0.r-13hce6t');
+
+  const elementEmptyState = document.querySelector('div[data-testid="empty_state_body_text"].css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-fdjqy7.r-a023e6.r-rjixqe.r-16dba41.r-1nxhmzv');
+
   // Function to replace 'Post' with 'Tweet' for inline tweet button
   if (elementInline && elementInline.textContent.includes('Post')) {
     elementInline.textContent = elementInline.textContent.replace('Post', 'Tweet');
@@ -116,6 +120,30 @@ function modifyPostToTweet() {
   if (elementModal && elementModal.textContent.includes('Post')) {
     elementModal.textContent = elementModal.textContent.replace('Post', 'Tweet');
   }
+
+    // Function to replace 'Post' with 'Tweet' for the specific element with 'pillLabel' test ID
+    if (elementPillLabel && elementPillLabel.textContent.includes('posted')) {
+      elementPillLabel.textContent = elementPillLabel.textContent.replace('posted', 'tweeted');
+    }
+
+     
+    if (elementEmptyState) {
+      Array.from(elementEmptyState.childNodes).forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          // Check and replace the specific part of the text
+          if (node.textContent.includes('X suspends')) {
+            node.textContent = node.textContent.replace('X suspends', 'Twitter suspends');
+          }
+
+          if (node.textContent.includes('posts')) {
+            node.textContent = node.textContent.replace('posts', 'tweets');
+          }
+
+
+        }
+      });
+    }
+
 
   // Targeting the specific sidebar tweet button
   const elementSidebar = document.querySelector('a[data-testid="SideNav_NewTweet_Button"] span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
@@ -177,6 +205,8 @@ function modifyTextContent() {
         break;
       case 'Undo repost':
         element.textContent = 'Undo retweet';
+        case 'X Rules':
+          element.textContent = 'Twitter Rules';
         break;
       case "Share someone else’s post on your timeline by reposting it. When you do, it’ll show up here.":
         element.textContent = "Share someone else’s tweet on your timeline by retweeting it. When you do, it’ll show up here.";
