@@ -40,6 +40,9 @@ OR
 
 Contributions, issues, and feature requests are welcome! Please open an issue to discuss your ideas or submit a pull request.
 
+## V1.23 Notes:
+
+- Hover tooltip for tablet sidebar tweet button restored to "Tweet"
 
 ## V1.22 Notes:
 

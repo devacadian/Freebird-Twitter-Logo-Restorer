@@ -111,9 +111,16 @@ function modifyPostToTweet() {
 
   const elementEmptyState = document.querySelector('div[data-testid="empty_state_body_text"].css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-fdjqy7.r-a023e6.r-rjixqe.r-16dba41.r-1nxhmzv');
 
+  const elementHoverLabel = document.querySelector('div[data-testid="HoverLabel"] span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
+
+
   // Function to replace 'Post' with 'Tweet' for inline tweet button
   if (elementInline && elementInline.textContent.includes('Post')) {
     elementInline.textContent = elementInline.textContent.replace('Post', 'Tweet');
+  }
+
+  if (elementHoverLabel && elementHoverLabel.textContent.includes('Post')) {
+    elementHoverLabel.textContent = elementHoverLabel.textContent.replace('Post', 'Tweet');
   }
 
   // Function to replace 'Post' with 'Tweet' for modal tweet button

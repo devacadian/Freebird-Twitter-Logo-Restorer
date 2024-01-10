@@ -1,5 +1,15 @@
 # FREEBIRD CHANGELOG
 
+## V1.23 Notes:
+
+- Hover tooltip for tablet sidebar tweet button restored to "Tweet"
+
+## V1.22 Notes:
+
+- In For You tab bubble "posts" text changed to "tweets"
+- "tweets" text restored on blocked accounts
+- "tweets" text restored on account that have you blocked
+
 ## v1.21 Notes:
 - "tweets" text restored in trending tab
 - "These tweets are protected" text restored
