@@ -212,6 +212,7 @@ function modifyTextContent() {
         break;
       case 'Undo repost':
         element.textContent = 'Undo retweet';
+        break;
         case 'X Rules':
           element.textContent = 'Twitter Rules';
         break;

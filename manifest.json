@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Freebird - X (Twitter) Logo Replacer",
-  "version": "1.23",
+  "version": "1.24",
   "description": "Restores the twitter logo/favicon to X (twitter) & restores tweet button.",
   "content_scripts": [{
     "matches": ["https://twitter.com/*"],
