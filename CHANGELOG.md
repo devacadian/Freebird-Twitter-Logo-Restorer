@@ -1,5 +1,13 @@
 # FREEBIRD CHANGELOG
 
+## V1.25 Notes:
+
+- Bug fix for accounts with "X" in tab title
+
+## V1.24 Notes:
+
+- Bug fix for "Undo Retweet" text
+
 ## V1.23 Notes:
 
 - Hover tooltip for tablet sidebar tweet button restored to "Tweet"

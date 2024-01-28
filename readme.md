@@ -40,6 +40,10 @@ OR
 
 Contributions, issues, and feature requests are welcome! Please open an issue to discuss your ideas or submit a pull request.
 
+## V1.25 Notes:
+
+- Bug fix for accounts with "X" in tab title
+
 ## V1.24 Notes:
 
 - Bug fix for "Undo Retweet" text

@@ -60,7 +60,11 @@ function replaceLogoAndFavicon() {
   // Update the tab title
   let titleElement = document.querySelector('title');
   if (titleElement && titleElement.textContent.includes('X')) {
-    titleElement.textContent = titleElement.textContent.replace('X', 'Twitter');
+    let regex = / \/ X$/;
+    if (regex.test(titleElement.textContent)) {
+      // Replace ' / X' with ' / Twitter' at the end of the title
+      titleElement.textContent = titleElement.textContent.replace(regex, ' / Twitter');
+    }
   }
 }
 
@@ -69,10 +73,16 @@ function replaceLogoAndFavicon() {
 
 function updateTitle() {
   let titleElement = document.querySelector('title');
-  if (titleElement && titleElement.textContent.includes('X')) {
-    titleElement.textContent = titleElement.textContent.replace('X', 'Twitter');
+  if (titleElement) {
+    // Use a regex to target ' / X' at the end of the title
+    let regex = / \/ X$/;
+    if (regex.test(titleElement.textContent)) {
+      // Replace ' / X' with ' / Twitter' at the end of the title
+      titleElement.textContent = titleElement.textContent.replace(regex, ' / Twitter');
+    }
   }
 }
+
 
 
 
