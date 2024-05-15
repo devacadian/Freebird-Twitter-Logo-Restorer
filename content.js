@@ -113,15 +113,16 @@ function observeTitleChanges() {
 
 function modifyPostToTweet() {
   // Targeting the specific inline tweet button
-  const elementInline = document.querySelector('div[data-testid="tweetButtonInline"] span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
+  const elementInline = document.querySelector('button[data-testid="tweetButtonInline"] div span span');
+  
   // Targeting the specific modal tweet button
-  const elementModal = document.querySelector('div[data-testid="tweetButton"] span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
+  const elementModal = document.querySelector('div[data-testid="tweetButton"] span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3');
 
   const elementPillLabel = document.querySelector('div[data-testid="pillLabel"].css-1rynq56.r-dnmrzs.r-1udh08x.r-3s2u2q.r-bcqeeo.r-qvutc0.r-37j5jr.r-a023e6.r-rjixqe.r-16dba41.r-1kihuf0.r-13hce6t');
 
   const elementEmptyState = document.querySelector('div[data-testid="empty_state_body_text"].css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-fdjqy7.r-a023e6.r-rjixqe.r-16dba41.r-1nxhmzv');
 
-  const elementHoverLabel = document.querySelector('div[data-testid="HoverLabel"] span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
+  const elementHoverLabel = document.querySelector('div[data-testid="HoverLabel"] span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3');
 
 
   // Function to replace 'Post' with 'Tweet' for inline tweet button
@@ -163,7 +164,7 @@ function modifyPostToTweet() {
 
 
   // Targeting the specific sidebar tweet button
-  const elementSidebar = document.querySelector('a[data-testid="SideNav_NewTweet_Button"] span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
+  const elementSidebar = document.querySelector('a[data-testid="SideNav_NewTweet_Button"] span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3');
   if (elementSidebar && elementSidebar.textContent.includes('Post')) {
     elementSidebar.classList.add('custom-tweet-button');
   }
@@ -171,7 +172,7 @@ function modifyPostToTweet() {
 
 function modifyTextContent() {
   // Combine other text modification functions
-  const elements = document.querySelectorAll('span.css-1qaijid.r-bcqeeo.r-qvutc0.r-poiln3');
+  const elements = document.querySelectorAll('span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3');
 
   elements.forEach(element => {
     switch (element.textContent) {
