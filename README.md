@@ -40,6 +40,11 @@ OR
 
 Contributions, issues, and feature requests are welcome! Please open an issue to discuss your ideas or submit a pull request.
 
+## V1.28 Notes:
+
+-- Tweet button on inner tweet panel restored
+
+-- (tab headers will be fixed shortly the developer is aware and working towards a solution)
 
 ## V1.27 Notes:
 
