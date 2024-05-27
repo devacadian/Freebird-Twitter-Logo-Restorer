@@ -40,11 +40,18 @@ OR
 
 Contributions, issues, and feature requests are welcome! Please open an issue to discuss your ideas or submit a pull request.
 
+
+## V1.27 Notes:
+
+-- support re-added for both x.com and twitter.com domains
+
 ## V1.26 Notes:
 
 - Tweet text buttons restored from twitter update
 
 - New extension icon added
+
+- Domain changed from twitter.com to x.com from twitter update
 
 ## V1.25 Notes:
 

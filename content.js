@@ -116,8 +116,8 @@ function modifyPostToTweet() {
   const elementInline = document.querySelector('button[data-testid="tweetButtonInline"] div span span');
   
   // Targeting the specific modal tweet button
-  const elementModal = document.querySelector('div[data-testid="tweetButton"] span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3');
-
+  const elementModal = document.querySelector('button[data-testid="tweetButton"] div span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3 > span');
+  
   const elementPillLabel = document.querySelector('div[data-testid="pillLabel"].css-1rynq56.r-dnmrzs.r-1udh08x.r-3s2u2q.r-bcqeeo.r-qvutc0.r-37j5jr.r-a023e6.r-rjixqe.r-16dba41.r-1kihuf0.r-13hce6t');
 
   const elementEmptyState = document.querySelector('div[data-testid="empty_state_body_text"].css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-fdjqy7.r-a023e6.r-rjixqe.r-16dba41.r-1nxhmzv');
