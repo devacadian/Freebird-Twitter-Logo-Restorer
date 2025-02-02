@@ -1,5 +1,26 @@
 # FREEBIRD CHANGELOG
 
+## V1.29 Notes:
+
+- Tweet text/icon button color restored to twitter blue from white 
+
+## V1.28 Notes:
+
+- Tweet button on inner tweet panel restored
+
+(tab headers will be fixed shortly the developer is aware and working towards a solution)
+
+
+## V1.27 Notes:
+
+- support re-added for both x.com and twitter.com domains
+
+## V1.26 Notes:
+
+- Tweet text buttons restored from twitter update
+
+- New extension icon added
+
 ## V1.25 Notes:
 
 - Bug fix for accounts with "X" in tab title

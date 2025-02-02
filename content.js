@@ -134,10 +134,41 @@ function modifyPostToTweet() {
     elementHoverLabel.textContent = elementHoverLabel.textContent.replace('Post', 'Tweet');
   }
 
+
+ // Restore button color for inline tweet button and set text color to white
+ if (elementInline) {
+  const inlineButton = elementInline.closest('button');
+  if (inlineButton) {
+    inlineButton.style.backgroundColor = '#1DA1F2';
+    // Override inner container text color which might have its own inline style
+    const inlineTextContainer = inlineButton.querySelector('div');
+    if (inlineTextContainer) {
+      inlineTextContainer.style.color = '#ffffff';
+    }
+  }
+}
+
+
   // Function to replace 'Post' with 'Tweet' for modal tweet button
   if (elementModal && elementModal.textContent.includes('Post')) {
     elementModal.textContent = elementModal.textContent.replace('Post', 'Tweet');
   }
+
+
+ // Restore button color for modal tweet button and set text color to white
+ if (elementModal) {
+  const modalButton = elementModal.closest('button');
+  if (modalButton) {
+    modalButton.style.backgroundColor = '#1DA1F2';
+    // Override inner container text color
+    const modalTextContainer = modalButton.querySelector('div');
+    if (modalTextContainer) {
+      modalTextContainer.style.color = '#ffffff';
+    }
+  }
+}
+
+
 
     // Function to replace 'Post' with 'Tweet' for the specific element with 'pillLabel' test ID
     if (elementPillLabel && elementPillLabel.textContent.includes('posted')) {
@@ -157,18 +188,46 @@ function modifyPostToTweet() {
             node.textContent = node.textContent.replace('posts', 'tweets');
           }
 
-
         }
       });
     }
 
 
-  // Targeting the specific sidebar tweet button
+  // Targeting the specific sidebar tweet button Large button on left
+
   const elementSidebar = document.querySelector('a[data-testid="SideNav_NewTweet_Button"] span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3');
-  if (elementSidebar && elementSidebar.textContent.includes('Post')) {
+  if (elementSidebar ) {
     elementSidebar.classList.add('custom-tweet-button');
-  }
+     // Get the closest parent anchor element (the button container)
+     const sidebarButton = elementSidebar.closest('a');
+     if (sidebarButton) {
+       // Set the background color to Twitter blue
+       sidebarButton.style.backgroundColor = '#1DA1F2';
+       // Set the text color to white by targeting its inner container
+       const innerDiv = sidebarButton.querySelector('div');
+       if (innerDiv) {
+        innerDiv.style.color = '#ffffff';
+        // Target the SVG icon and force its color to white
+        const svgIcon = innerDiv.querySelector('svg');
+        if (svgIcon) {
+          svgIcon.style.color = '#ffffff';
+          svgIcon.style.fill = '#ffffff';
+          // Also update all child path elements in the SVG
+          svgIcon.querySelectorAll('path').forEach(path => {
+            path.setAttribute('fill', '#ffffff');
+          });
+        }
+       }
+     }
+   }
+
+
 }
+
+
+
+
+
 
 function modifyTextContent() {
   // Combine other text modification functions
