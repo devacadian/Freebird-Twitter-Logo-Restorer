@@ -3,12 +3,16 @@
   "name": "Freebird - X (Twitter) Logo Replacer",
   "version": "1.29",
   "description": "Restores the twitter logo/favicon to X (twitter) & brings back the original Twitter experience.",
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": ["https://x.com/*", "https://twitter.com/*"],
       "js": ["content.js"]
     }
   ],
+  "options_page": "options.html",
   "icons": {
     "128": "icon.png"
   }

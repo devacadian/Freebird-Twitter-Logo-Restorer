@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Freebird Twitter Logo Restorer Options</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      transition: background-color 0.3s ease;
+    }
+    h1 {
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+    label, select, button {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    #save {
+      background-color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Freebird Twitter Logo Restorer Options</h1>
+  <label for="logoColor">Choose logo color:</label>
+  <select id="logoColor">
+    <option value="#1D9BF0">Blue</option>
+    <option value="#FFD400">Yellow</option>
+    <option value="#F91880">Pink</option>
+    <option value="#7856FF">Purple</option>
+    <option value="#FF7A00">Orange</option>
+    <option value="#00BA7C">Green</option>
+  </select>
+  <button id="save">Save</button>
+  <script src="options.js"></script>
+</body>
+</html>
