@@ -23,7 +23,7 @@ const SELECTORS = {
   emptyStateBodyText: 'div[data-testid="empty_state_body_text"].css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-fdjqy7.r-a023e6.r-rjixqe.r-16dba41.r-1nxhmzv',
   hoverLabel: 'div[data-testid="HoverLabel"] span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3',
   sidebarTweetButtonLabel: 'a[data-testid="SideNav_NewTweet_Button"] span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3',
-  textTargets: 'span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3, .public-DraftEditorPlaceholder-inner',
+  textTargets: 'span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3, .public-DraftEditorPlaceholder-inner, p.jf-element.jf-truncate-end',
 };
 
 const CUSTOM_TWEET_BUTTON_CSS = `
@@ -45,14 +45,17 @@ const TEXT_REPLACEMENTS = new Map([
   ['View post engagements', 'View tweet engagements'],
   ['View post activity', 'View tweet activity'],
   ['Embed post', 'Embed tweet'],
+  ['Earn from your posts', 'Earn from your tweets'],
   ['Live on X', 'Live on Twitter'],
   ['Sign in to X', 'Sign in to Twitter'],
   ['View post analytics', 'View tweet analytics'],
   ['You shared a post', 'You shared a tweet'],
   ['Post Analytics', 'Tweet Analytics'],
   ['Share post via …', 'Share tweet via …'],
+  ['Share post via…', 'Share tweet via...'],
   ['Post engagements', 'Tweet engagements'],
-  ['Post your reply', 'Post your tweet'],
+  ['Post your reply', 'Tweet your reply'],
+  ['Post Video', 'Tweet Video'],
   ['Welcome to X!', 'Welcome to Twitter!'],
   ['No Reposts yet', 'No Retweets yet'],
   ['Report post', 'Report tweet'],
