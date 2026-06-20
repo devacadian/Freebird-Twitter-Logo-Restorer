@@ -63,6 +63,7 @@ const TEXT_REPLACEMENTS = new Map([
   ['Reposts', 'Retweets'],
   ['Save post', 'Save tweet'],
   ['These posts are protected', 'These tweets are protected'],
+  ['Top posts by engagement', 'Top tweets by engagement'],
   ['Undo repost', 'Undo retweet'],
   ['X Rules', 'Twitter Rules'],
   [
